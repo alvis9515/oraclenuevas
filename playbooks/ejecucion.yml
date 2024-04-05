@@ -1,5 +1,5 @@
 - name: Ejecucion de script
-  hosts: ol7-database
+  hosts: "{{ServerOracle}}"
   become: true
   tasks:
     - name: Ejecucion de script

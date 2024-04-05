@@ -1,6 +1,6 @@
 ---
 - name: Eliminar usuario
-  hosts: k3s-rancher
+  hosts: "{{ServerKube}}"
   become: true
   tasks:
     - name: Descargar archivos
@@ -8,7 +8,7 @@
         name: roles/Download
 
 - name: Subir a Server2
-  hosts: ol7-database
+  hosts: "{{ServerOracle}}"
   become: true
   tasks:
     - name: Subir archivo a Server2
@@ -16,7 +16,7 @@
         name: roles/Enviar
 
 - name: Cambiar permisos a oracle
-  hosts: ol7-database
+  hosts: "{{ServerOracle}}"
   become: true
   tasks:
     - name: Cambiar permisos a oracle
