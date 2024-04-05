@@ -22,11 +22,4 @@
     - name: Cambiar permisos a oracle
       include_role:
         name: roles/Permisos
-
-- name: Ejecucion de script
-  hosts: ol7-database
-  become: true
-  tasks:
-    - name: Ejecucion de script
-      include_role:
-        name: roles/EjecucionS
+  
