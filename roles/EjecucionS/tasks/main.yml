@@ -3,9 +3,17 @@
   shell: |
     echo "exit" | {{ sqlplus }} -S {{ oracle_user }}/{{ oracle_password }}@localhost:{{ oracle_port }}/{{ oracle_database }} @{{ script_sql_path }}
   environment: 
+    TEMP: /tmp
+    TMP: /tmp
+    TMPDIR: /tmp
     ORACLE_BASE: /u01/app/oracle
     ORACLE_HOME: $ORACLE_BASE/product/19.0.0/dbhome_1
+    ORA_INVENTORY: /u01/app/oraInventory
+    ORACLE_SID: ORCLDB
+    PATH: $ORACLE_HOME/bin:$PATH
     LD_LIBRARY_PATH: $ORACLE_HOME/lib
+    CLASSPATH: $ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib:$ORACLE_HOME/JRE
+    
   register: sqlplus_output
   
 - name: Mostrar salida de SQL*Plus
