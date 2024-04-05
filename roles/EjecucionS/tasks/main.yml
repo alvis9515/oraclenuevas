@@ -6,8 +6,6 @@
     ORACLE_BASE: /u01/app/oracle
     ORACLE_HOME: $ORACLE_BASE/product/19.0.0/dbhome_1
     LD_LIBRARY_PATH: $ORACLE_HOME/lib
-  args:
-    executable: /bin/bash
   register: sqlplus_output
   
 - name: Mostrar salida de SQL*Plus
