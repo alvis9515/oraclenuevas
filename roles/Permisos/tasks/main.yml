@@ -1,0 +1,7 @@
+---
+- name: Cambiar los permisos del archivo script.sql para el usuario y grupo Oracle
+  file:
+    path: "{{ path_cambiar }}"
+    owner: oracle
+    group: oracle
+    mode: "0664"

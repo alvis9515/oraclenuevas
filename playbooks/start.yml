@@ -14,3 +14,11 @@
     - name: Subir archivo a Server2
       include_role:
         name: roles/Enviar
+
+- name: Cambiar permisos a oracle
+  hosts: ol7-database
+  become: true
+  tasks:
+    - name: Cambiar permisos a oracle
+      include_role:
+        name: roles/Permisos
