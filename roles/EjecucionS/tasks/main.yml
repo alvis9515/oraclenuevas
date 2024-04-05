@@ -1,0 +1,11 @@
+---
+- name: Ejecutar script SQL usando SQL*Plus
+  shell: |
+    echo "exit" | sqlplus -S {{ oracle_user }}/{{ oracle_password }}@localhost:{{ oracle_port }}/{{ oracle_database }} @{{ script_sql_path }}
+  args:
+    executable: /bin/bash
+  register: sqlplus_output
+  
+- name: Mostrar salida de SQL*Plus
+  debug:
+    var: sqlplus_output.stdout_lines
