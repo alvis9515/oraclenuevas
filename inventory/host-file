@@ -1,0 +1,4 @@
+[Servidores]
+k3s-rancher     ansible_host=192.168.73.88
+docker-ubuntu   ansible_host=192.168.73.84
+ol7-database    ansible_host=192.168.73.37

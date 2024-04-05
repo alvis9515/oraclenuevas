@@ -1,0 +1,16 @@
+---
+- name: Eliminar usuario
+  hosts: k3s-rancher
+  become: true
+  tasks:
+    - name: Descargar archivos
+      include_role:
+        name: roles/Download
+
+- name: Subir a Server2
+  hosts: ol7-database
+  become: true
+  tasks:
+    - name: Subir archivo a Server2
+      include_role:
+        name: roles/Enviar

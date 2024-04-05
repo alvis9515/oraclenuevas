@@ -1,0 +1,5 @@
+---
+- name: Subir archivo al servidor remoto
+  ansible.builtin.copy:
+    src: "{{ Dest_localpath }}"
+    dest: "{{ dest_path }}"
