@@ -1,5 +1,5 @@
 - name: Ejecucion de script
-  hosts: "{{serveroracle}}"
+  hosts: srvtest113
   become: true
   tasks:
     - name: Ejecucion de script
