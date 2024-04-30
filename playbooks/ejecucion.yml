@@ -1,5 +1,5 @@
 - name: Ejecucion de script
-  hosts: "{{oracleserver}}"
+  hosts: "{{server_oracle}}"
   become: true
   tasks:
     - name: Ejecucion de script
