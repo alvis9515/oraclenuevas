@@ -1,1 +1,8 @@
 ---
+- name: Subir a Server2
+  hosts: all
+  become: true
+  tasks:
+    - name: Subir archivo a Server2
+      include_role:
+        name: roles/Enviar
