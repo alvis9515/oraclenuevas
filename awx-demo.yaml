@@ -1,0 +1,19 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx-demo
+spec:
+  service_type: nodeport
+  nodeport_port: 30080
+
+  postgres_data_volume_init: true
+  postgres_storage_class: awx-postgres-volume
+  postgres_storage_requirements:
+    requests:
+      storage: 20Gi
+
+  projects_persistence: true
+  projects_existing_claim: awx-projects-claim
+
+  postgres_resource_requirements: {}
